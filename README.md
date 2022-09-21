@@ -6,7 +6,7 @@ This extends the official manual available here: https://microsoft.github.io/Azu
 
 **Note:** Sometimes steps of Makefile may fail without any good reason, in that case, wait 15 min and run it again (it’s usually because state on Azure is pending).
 
-**Note:** auth caption of Makefile is overridden.
+**Note:** `all` caption of `Makefile` is overridden.
 
 ## Deployment of Azure TRE using WSL (or Ubuntu):
 
