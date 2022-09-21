@@ -59,6 +59,6 @@ Follow the manual: https://microsoft.github.io/AzureTRE/tre-admins/setup-instruc
 `The redirect URI 'WHATEVER' specified in the request does not match the redirect URIs configured for the application 'WHATEVER'. Make sure the redirect URI sent in the request matches one added to your application in the Azure portal. Navigate to https://aka.ms/redirectUriMismatchError to learn more about how to fix this.`
 Go to portal.azure.com > Azure Active Directory > App registrations > (find the matching app by ID from the error message) > Authentication > (Add mechanically URL from error message)
 
-**Critical warning:** when clicking 'Authorization' in Swagger, leave the client_secret field empty.
+**Critical warning:** when clicking 'Authorization' in Swagger, leave the `client_secret` field empty.
 
-**Critical warning:** you need to assign permissions (namely TREUser and TREAdmin) to a user you want to use for managing TRE (typically yourself). Do this before authorization (it takes around 10 minutes before permissions completely propagates).
+**Critical warning:** you need to assign permissions (namely TREUser and TREAdmin) to a user you want to use for managing TRE (typically yourself). Do this before authorization (it takes around 10 minutes before permissions completely propagate).
