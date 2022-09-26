@@ -82,3 +82,13 @@ Go to portal.azure.com > Azure Active Directory > App registrations > (find the 
 (that `auto_create` argument is an undocumented but critical).
 
 **Warning:** the process very often fails (without any meaningful error message), if that happens, wait 10 minutes and repeat it (it can take up to 5 times).
+
+## Installing workspace service and user resource
+Follow the manual, but in the first step, you need
+to build the container first, therefore, use.
+```shell
+make bundle-build DIR=./templates/workspace_services/guacamole
+make bundle-publish DIR=./templates/workspace_services/guacamole BUNDLE_TYPE=workspace_service
+make bundle-register DIR=./templates/workspace_services/guacamole BUNDLE_TYPE=workspace_service
+```
+The first line (building step) needs to be added; that is the difference.
