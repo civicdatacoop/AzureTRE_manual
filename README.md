@@ -62,3 +62,23 @@ Go to portal.azure.com > Azure Active Directory > App registrations > (find the 
 **Critical warning:** when clicking 'Authorization' in Swagger, leave the `client_secret` field empty.
 
 **Critical warning:** you need to assign permissions (namely TREUser and TREAdmin) to a user you want to use for managing TRE (typically yourself). Do this before authorization (it takes around 10 minutes before permissions completely propagate).
+
+**Note:** think twice what you really need to deploy (probably you do not need, for example, Gitea).
+
+## Base Workspace
+1. Follow the manual (step number 6).
+2. To register workspace, run in Swagger using route `/api/workspaces` method POST:
+```json
+{
+  "templateName": "tre-workspace-base",
+  "properties": {
+    "display_name": "manual-from-swagger",
+    "description": "workspace for team X",
+    "client_id":"auto_create",
+    "address_space_size": "medium"
+  }
+}
+```
+(that `auto_create` argument is an undocumented but critical).
+
+**Warning:** the process very often fails (without any meaningful error message), if that happens, wait 10 minutes and repeat it (it can take up to 5 times).
