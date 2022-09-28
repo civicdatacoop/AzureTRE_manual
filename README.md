@@ -94,7 +94,7 @@ make bundle-register DIR=./templates/workspace_services/guacamole BUNDLE_TYPE=wo
 The first line (building step) needs to be added; that is the difference.
 
 Also, then you need to generate JSON Payload
-explicitly, using a specialised script (that is
+manually, using a specialised script (that is
 not mentioned in the manual either).
 
 1. Go to the folder with a workspace service, e. g.:
