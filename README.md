@@ -92,3 +92,14 @@ make bundle-publish DIR=./templates/workspace_services/guacamole BUNDLE_TYPE=wor
 make bundle-register DIR=./templates/workspace_services/guacamole BUNDLE_TYPE=workspace_service
 ```
 The first line (building step) needs to be added; that is the difference.
+
+Also, then you need to generate JSON Payload
+explicitly, using a specialised script (that is
+not mentioned in the manual either).
+
+1. Go to the folder with a workspace service, e. g.:
+   1. `cd ./templates/workspace_services/guacamole`
+2. Run the command:
+   1. `../../../devops/scripts/register_bundle_with_api.sh -r ACR_NAME -i -t workspace`
+   2. but first, in this command, replace the `ACR_NAME` with a proper value (you can find it in the `/devops/.env` file)
+3. Now, you should see the JSON Payload.
