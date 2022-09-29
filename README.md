@@ -103,3 +103,7 @@ not mentioned in the manual either).
    1. `../../../devops/scripts/register_bundle_with_api.sh -r ACR_NAME -i -t workspace`
    2. but first, in this command, replace the `ACR_NAME` with a proper value (you can find it in the `/devops/.env` file)
 3. Now, you should see the JSON Payload.
+
+**Warning:** When it comes to accessing to workspace, as mentioned in the manual, you need to use the UUID of the base workspace (find it in the GET route), not the ID of a generated template (which is eluded in the manual).
+
+**Warning:** The JSON template in the Creating a user resource subsection is incorrect - the correct one is without the nexus_version argument (just remove it).
