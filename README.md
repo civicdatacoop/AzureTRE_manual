@@ -61,7 +61,8 @@ Go to portal.azure.com > Azure Active Directory > App registrations > (find the 
 
 **Critical warning:** when clicking 'Authorization' in Swagger, leave the `client_secret` field empty.
 
-**Critical warning:** you need to assign permissions (namely TREUser and TREAdmin) to a user you want to use for managing TRE (typically yourself). Do this before authorization (it takes around 10 minutes before permissions completely propagate).
+**Critical warning:** you need to assign permissions (namely TREUser and TREAdmin) to a user you want to use for managing TRE (typically yourself). Do this before authorization (it takes around 10 minutes before permissions completely propagate). This is done in _WateverAppName_ **API** | Users and groups (Enterprise Application subsection), by clicking on `Add user/group`.
+Enterprise Application
 
 **Note:** think twice what you really need to deploy (probably you do not need, for example, Gitea).
 
