@@ -108,3 +108,14 @@ not mentioned in the manual either).
 **Warning:** When it comes to accessing to workspace, as mentioned in the manual, you need to use the UUID of the base workspace (find it in the GET route), not the ID of a generated template (which is eluded in the manual).
 
 **Warning:** The JSON template in the Creating a user resource subsection is incorrect - the correct one is without the nexus_version argument (just remove it).
+
+## Additional commands
+To get workspace app reg secrets:
+```
+./devops/scripts/aad/create_workspace_application.sh \
+    --name "${TRE_ID} - Test Workspace" \
+    --admin-consent \
+    --ux-clientid "${SWAGGER_UI_CLIENT_ID}" \
+    --automation-clientid "${TEST_ACCOUNT_CLIENT_ID}" \
+    --application-admin-clientid "${APPLICATION_ADMIN_CLIENT_ID}"
+```
