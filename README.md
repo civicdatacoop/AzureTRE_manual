@@ -8,6 +8,28 @@ This extends the official manual available here: https://microsoft.github.io/Azu
 
 **Note:** `all` caption of `Makefile` is overridden.
 
+## Comments related to CICD deployment
+1. To get workspace app reg secrets:
+```
+./devops/scripts/aad/create_workspace_application.sh \
+    --name "${TRE_ID} - Test Workspace" \
+    --admin-consent \
+    --ux-clientid "${SWAGGER_UI_CLIENT_ID}" \
+    --automation-clientid "${TEST_ACCOUNT_CLIENT_ID}" \
+    --application-admin-clientid "${APPLICATION_ADMIN_CLIENT_ID}"
+```
+_some other variables are identical to "normal" app (CICD passes)_
+
+2. In the case of failure around key valut - the old values have to be removed (manually in Azure Portal).
+3. `CORE_ADDRESS_SPACE` and `TRE_ADDRESS_SPACE` both need to be shifted when FlowEHR is deployed, e. g.:
+```yaml
+CORE_ADDRESS_SPACE: 10.58.0.0/22
+TRE_ADDRESS_SPACE: 10.58.0.0/16
+```
+
+# Other notes
+_The rest of the manual is not updated (as of July 2023), but some points might still be valid._
+
 ## Deployment of Azure TRE using WSL (or Ubuntu):
 
 Before anything, go to bash (or WSL on Windows) and do the following:
@@ -109,21 +131,3 @@ not mentioned in the manual either).
 
 **Warning:** The JSON template in the Creating a user resource subsection is incorrect - the correct one is without the nexus_version argument (just remove it).
 
-## Additional comments related to CICD deployment
-1. To get workspace app reg secrets:
-```
-./devops/scripts/aad/create_workspace_application.sh \
-    --name "${TRE_ID} - Test Workspace" \
-    --admin-consent \
-    --ux-clientid "${SWAGGER_UI_CLIENT_ID}" \
-    --automation-clientid "${TEST_ACCOUNT_CLIENT_ID}" \
-    --application-admin-clientid "${APPLICATION_ADMIN_CLIENT_ID}"
-```
-_some other variables are identical to "normal" app (CICD passes)_
-
-2. In the case of failure around key valut - the old values have to be removed.
-3. `CORE_ADDRESS_SPACE` and `TRE_ADDRESS_SPACE` both need to be shifted when FlowEHR is deployed, e. g.:
-```yaml
-CORE_ADDRESS_SPACE: 10.58.0.0/22
-TRE_ADDRESS_SPACE: 10.58.0.0/16
-```
