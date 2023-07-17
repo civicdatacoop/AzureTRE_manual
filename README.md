@@ -109,8 +109,8 @@ not mentioned in the manual either).
 
 **Warning:** The JSON template in the Creating a user resource subsection is incorrect - the correct one is without the nexus_version argument (just remove it).
 
-## Additional commands
-To get workspace app reg secrets:
+## Additional comments related to CICD deployment
+1. To get workspace app reg secrets:
 ```
 ./devops/scripts/aad/create_workspace_application.sh \
     --name "${TRE_ID} - Test Workspace" \
@@ -119,3 +119,6 @@ To get workspace app reg secrets:
     --automation-clientid "${TEST_ACCOUNT_CLIENT_ID}" \
     --application-admin-clientid "${APPLICATION_ADMIN_CLIENT_ID}"
 ```
+_some other variables are identical to "normal" app (CICD passes)_
+
+2. In the case of failure around key valut - the old values have to be removed.
