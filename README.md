@@ -122,3 +122,8 @@ not mentioned in the manual either).
 _some other variables are identical to "normal" app (CICD passes)_
 
 2. In the case of failure around key valut - the old values have to be removed.
+3. `CORE_ADDRESS_SPACE` and `TRE_ADDRESS_SPACE` both need to be shifted when FlowEHR is deployed, e. g.:
+```yaml
+CORE_ADDRESS_SPACE: 10.58.0.0/22
+TRE_ADDRESS_SPACE: 10.58.0.0/16
+```
